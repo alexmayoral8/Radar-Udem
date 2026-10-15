@@ -1,0 +1,14 @@
+
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "radar-udem-health",
+  "main": "dist/server/index.js",
+  "compatibility_date": "2026-10-15",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "radar-udem-db",
+      "database_id": "REEMPLAZAR_CON_TU_DATABASE_ID"
+    }
+  ]
+}
