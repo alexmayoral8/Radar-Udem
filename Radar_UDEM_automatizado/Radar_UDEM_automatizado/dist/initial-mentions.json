@@ -1,0 +1,1720 @@
+{
+  "mentions": [
+    {
+      "id": "pinochoyfrankensteininspiranajovendeciudadmaderosucortollegaafestivaldeanimacion|elsoldetampicomx",
+      "title": "Pinocho y Frankenstein inspiran a joven de Ciudad Madero: su corto llega a festival de animación",
+      "source": "Elsoldetampico Mx",
+      "sourceUrl": "https://www.elsoldetampico.com.mx/",
+      "url": "https://oem.com.mx/elsoldetampico/gossip/pinocho-y-frankenstein-inspiran-a-joven-de-ciudad-madero-su-corto-llega-a-festival-de-animacion-32570373",
+      "publishedAt": "2026-10-12",
+      "publishedTime": "2026-10-12T22:33:22.000Z",
+      "capturedAt": "2026-10-14T17:57:01.696Z",
+      "kind": "external",
+      "topics": [
+        "Educación y experiencia estudiantil",
+        "Cultura, deportes y comunidad"
+      ],
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "newsdata",
+      "excerpt": "El estudiante de la Udem fue seleccionado para Pixelatl 2026 con Blockhead, un cortometraje de animación 3D",
+      "queryId": "newsdata-siglas",
+      "matchBasis": "Mención de UDEM en el extracto",
+      "foundVia": [
+        "NewsData.io"
+      ],
+      "dateBasis": "Fecha proporcionada por NewsData.io"
+    },
+    {
+      "id": "proponenconvertiredificiosdeahmsaenespacioseducativos|info7",
+      "title": "Proponen convertir edificios de AHMSA en espacios educativos",
+      "source": "INFO7",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/ProyectoEspaciosEducativosAHMSA.jpg",
+      "publishedAt": "2026-10-02",
+      "publishedTime": "2026-10-02T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.919Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-octubre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "marioguzmannuevodirectordemarketingdejcdecauxespana|marketingdirecto",
+      "title": "Mario Guzmán, nuevo director de Marketing de JCDecaux España",
+      "source": "Marketing Directo",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/MarioGuzman_JCDecaux.jpg",
+      "publishedAt": "2026-10-02",
+      "publishedTime": "2026-10-02T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.919Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-octubre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "forjaunahistoriadeemprendimientoeinnovacioncatedrajorgelgarzaudeminspira2026|milenio",
+      "title": "Forja una historia de emprendimiento e innovación Cátedra Jorge L. Garza UDEM Inspira 2026",
+      "source": "Milenio",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/CatedraJorgeLGarza_Milenio.jpg",
+      "publishedAt": "2026-10-02",
+      "publishedTime": "2026-10-02T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.919Z",
+      "kind": "external",
+      "topic": "Investigación e innovación",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-octubre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Investigación e innovación"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "consolidaseisanosdeinnovacionyemprendimiento|elnorte",
+      "title": "Consolida seis años de innovación y emprendimiento",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/CatedraJorgeLGarza_ElNorte.jpg",
+      "publishedAt": "2026-10-02",
+      "publishedTime": "2026-10-02T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.919Z",
+      "kind": "external",
+      "topic": "Investigación e innovación",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-octubre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Investigación e innovación"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "pintaelmundodelossuenos|elnorte",
+      "title": "Pinta el mundo de los sueños",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/PintaMundoSuen%CC%83os.jpg",
+      "publishedAt": "2026-10-01",
+      "publishedTime": "2026-10-01T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.919Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-octubre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "entrevistaconestrellavillarrealdirectoradeeventosyproduccionesudem|abcnoticias",
+      "title": "Entrevista con Estrella Villarreal, Directora de Eventos y Producciones UDEM",
+      "source": "ABC Noticias",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/2026-10/CatedraJorgeLGarza_ABC.mp4",
+      "publishedAt": "2026-10-01",
+      "publishedTime": "2026-10-01T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.919Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-octubre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "youtube:v8d7k89f4PM",
+      "videoId": "v8d7k89f4PM",
+      "title": "Un alemán se enamora de Monterrey... y de la UDEM",
+      "excerpt": "Jamie Kiimbila, estudiante alemán de intercambio en la UDEM, alcanza 1.5 millones de vistas al mostrar su campus. Suscríbete ...",
+      "source": "Grupo REFORMA",
+      "sourceUrl": "https://www.youtube.com/channel/UCi3OEHxBpk63NyRCxZM8pYw",
+      "channelId": "UCi3OEHxBpk63NyRCxZM8pYw",
+      "url": "https://www.youtube.com/watch?v=v8d7k89f4PM",
+      "publishedAt": "2026-09-28",
+      "publishedTime": "2026-09-28T18:19:09.000Z",
+      "capturedAt": "2026-10-06T17:43:21.504Z",
+      "kind": "unverified",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "youtube",
+      "queryId": "youtube-siglas",
+      "matchBasis": "Referencia explícita a Universidad de Monterrey, o UDEM junto con Monterrey / Nuevo León. Origen del canal pendiente de verificación.",
+      "topics": [
+        "Educación y experiencia estudiantil"
+      ],
+      "foundVia": [
+        "YouTube"
+      ]
+    },
+    {
+      "id": "ofrecealternativasalaexpansionurbanademonterreyconherramientadigital|elnorte",
+      "title": "Ofrece alternativas a la expansión urbana de Monterrey con herramienta digital",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/udem%20herramienta.jpg",
+      "publishedAt": "2026-09-28",
+      "publishedTime": "2026-09-28T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Investigación e innovación",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Investigación e innovación"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "muestransuvisiondemonterrey|elnorte",
+      "title": "Muestran su visión de Monterrey",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Udem_Jamie.jpg",
+      "publishedAt": "2026-09-28",
+      "publishedTime": "2026-09-28T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "youtube:9O-E2Lr8Tyk",
+      "videoId": "9O-E2Lr8Tyk",
+      "title": "Borregos Monterrey vs Troyanas UDEM en la rama femenil de la Conadeip México",
+      "excerpt": "Borregos Monterrey vs Troyanas UDEM en la rama femenil de la Conferencia Nacional de Voleibol de la Conadeip México.",
+      "source": "Borregos Monterrey",
+      "sourceUrl": "https://www.youtube.com/channel/UC7Vnt-rr4JQOBtoSz3ys0qw",
+      "channelId": "UC7Vnt-rr4JQOBtoSz3ys0qw",
+      "url": "https://www.youtube.com/watch?v=9O-E2Lr8Tyk",
+      "publishedAt": "2026-09-24",
+      "publishedTime": "2026-09-24T04:31:48.000Z",
+      "capturedAt": "2026-10-06T17:43:21.504Z",
+      "kind": "unverified",
+      "topic": "Institucional y otros",
+      "provenance": "youtube",
+      "queryId": "youtube-siglas",
+      "matchBasis": "Referencia explícita a Universidad de Monterrey, o UDEM junto con Monterrey / Nuevo León. Origen del canal pendiente de verificación.",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "YouTube"
+      ]
+    },
+    {
+      "id": "fortaleceudemsuvinculacioninternacionaleningenieriaconestanciaacademicaenpolonia|milenio",
+      "title": "Fortalece UDEM su vinculación internacional en ingeniería con estancia académica en Polonia",
+      "source": "Milenio",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/EstanciaAcademicaPolonia.jpg",
+      "publishedAt": "2026-09-22",
+      "publishedTime": "2026-09-22T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil",
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "fortaleceudemformacionglobaldeingenieriaconestanciaacademicaenpolonia|elnorte",
+      "title": "Fortalece UDEM formación global de ingeniería con estancia académica en Polonia",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/VeranoEnPolonia.jpg",
+      "publishedAt": "2026-09-21",
+      "publishedTime": "2026-09-21T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "youtube:ZgeqRRgRtiA",
+      "videoId": "ZgeqRRgRtiA",
+      "title": "Felicidades a la Universidad de Monterrey 57 aniversario #udem",
+      "excerpt": "genteudem.",
+      "source": "Gerardo Canavati",
+      "sourceUrl": "https://www.youtube.com/channel/UC1dl2FvBixUJi0TvbvUdEog",
+      "channelId": "UC1dl2FvBixUJi0TvbvUdEog",
+      "url": "https://www.youtube.com/watch?v=ZgeqRRgRtiA",
+      "publishedAt": "2026-09-21",
+      "publishedTime": "2026-09-21T04:19:49.000Z",
+      "capturedAt": "2026-10-06T17:43:21.504Z",
+      "kind": "unverified",
+      "topic": "Institucional y otros",
+      "provenance": "youtube",
+      "queryId": "youtube-siglas",
+      "matchBasis": "Referencia explícita a Universidad de Monterrey, o UDEM junto con Monterrey / Nuevo León. Origen del canal pendiente de verificación.",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "YouTube"
+      ]
+    },
+    {
+      "id": "youtube:LQkCzJWM3WA",
+      "videoId": "LQkCzJWM3WA",
+      "title": "Experto Legal: Maestría y Doctorado en Derecho UANL y UdeM #shorts",
+      "excerpt": "Un vistazo a la formación académica de un experto en Derecho: Licenciatura y Maestría en la Universidad de Nuevo León, ...",
+      "source": "Gabuardi Org",
+      "sourceUrl": "https://www.youtube.com/channel/UCMmRyicdX1W9vMVcZnuj9QQ",
+      "channelId": "UCMmRyicdX1W9vMVcZnuj9QQ",
+      "url": "https://www.youtube.com/watch?v=LQkCzJWM3WA",
+      "publishedAt": "2026-09-17",
+      "publishedTime": "2026-09-17T21:55:48.000Z",
+      "capturedAt": "2026-10-06T17:43:21.504Z",
+      "kind": "unverified",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "youtube",
+      "queryId": "youtube-siglas",
+      "matchBasis": "Referencia explícita a Universidad de Monterrey, o UDEM junto con Monterrey / Nuevo León. Origen del canal pendiente de verificación.",
+      "topics": [
+        "Educación y experiencia estudiantil"
+      ],
+      "foundVia": [
+        "YouTube"
+      ]
+    },
+    {
+      "id": "logranprimerpasoexitoso|elnorte",
+      "title": "Logran primer paso exitoso",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/PrimerPasoExitoso.jpg",
+      "publishedAt": "2026-09-17",
+      "publishedTime": "2026-09-17T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "nuevoleonpremiatrayectoriadecincolideresdecienciaytecnologia|abcnoticias",
+      "title": "Nuevo León premia trayectoria de cinco líderes de ciencia y tecnología",
+      "source": "ABC Noticias",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/NL_PTecnologi%CC%81aABC.jpg",
+      "publishedAt": "2026-09-14",
+      "publishedTime": "2026-09-14T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Investigación e innovación",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Investigación e innovación",
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "reconocegobiernodelestadodenuevoleoneltalentoquetransformaelconocimientoendesarrollo|elnorte",
+      "title": "Reconoce Gobierno del Estado de Nuevo León el talento que transforma el conocimiento en desarrollo",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/NL_Premio_Tecnologia.jpg",
+      "publishedAt": "2026-09-14",
+      "publishedTime": "2026-09-14T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Vinculación y reconocimiento",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "youtube:-2STEONRYA4",
+      "videoId": "-2STEONRYA4",
+      "title": "FINAL NACIONAL ADEMEBA 3X3 U17 UDEM 2010 VS QUERETARO 09",
+      "excerpt": "Gran final del torneo nacional ADEMEBA 3X3 U17 Realizado en la ciudad de Monterrey N.L. en las instalaciones del colegio ...",
+      "source": "BASKETGLASS",
+      "sourceUrl": "https://www.youtube.com/channel/UCs4AX_Vq5WX0UJoJ_ctpBrg",
+      "channelId": "UCs4AX_Vq5WX0UJoJ_ctpBrg",
+      "url": "https://www.youtube.com/watch?v=-2STEONRYA4",
+      "publishedAt": "2026-09-14",
+      "publishedTime": "2026-09-14T02:52:03.000Z",
+      "capturedAt": "2026-10-06T17:43:21.504Z",
+      "kind": "unverified",
+      "topic": "Cultura, deportes y comunidad",
+      "provenance": "youtube",
+      "queryId": "youtube-siglas",
+      "matchBasis": "Referencia explícita a Universidad de Monterrey, o UDEM junto con Monterrey / Nuevo León. Origen del canal pendiente de verificación.",
+      "topics": [
+        "Cultura, deportes y comunidad"
+      ],
+      "foundVia": [
+        "YouTube"
+      ]
+    },
+    {
+      "id": "celebracomunidadudem57anosdehistoriacompartida|elnorte",
+      "title": "Celebra comunidad UDEM 57 años de historia compartida",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/AniversarioNorte.jpg",
+      "publishedAt": "2026-09-11",
+      "publishedTime": "2026-09-11T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Cultura, deportes y comunidad",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Cultura, deportes y comunidad"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "reunealacomunidadudemelfestejodesu57aniversario|milenio",
+      "title": "Reúne a la comunidad UDEM el festejo de su 57 aniversario",
+      "source": "Milenio",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/AniversarioMilenio.jpg",
+      "publishedAt": "2026-09-11",
+      "publishedTime": "2026-09-11T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Cultura, deportes y comunidad",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Cultura, deportes y comunidad"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "youtube:Gnub7xlQ5R8",
+      "videoId": "Gnub7xlQ5R8",
+      "title": "Vivir en Monterrey te da estas conversaciones 😭 | Edición Tec/UDEM",
+      "excerpt": "vallsaenz//Hoy Probé! Exchange students and their comments about Monterrey Tec/UDEM edition #Monterrey ...",
+      "source": "GΞЯA / GΞЯЯY",
+      "sourceUrl": "https://www.youtube.com/channel/UCXaLayoH23r_4WPWvuDUjSA",
+      "channelId": "UCXaLayoH23r_4WPWvuDUjSA",
+      "url": "https://www.youtube.com/watch?v=Gnub7xlQ5R8",
+      "publishedAt": "2026-09-10",
+      "publishedTime": "2026-09-10T22:23:12.000Z",
+      "capturedAt": "2026-10-06T17:43:21.504Z",
+      "kind": "unverified",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "youtube",
+      "queryId": "youtube-siglas",
+      "matchBasis": "Referencia explícita a Universidad de Monterrey, o UDEM junto con Monterrey / Nuevo León. Origen del canal pendiente de verificación.",
+      "topics": [
+        "Educación y experiencia estudiantil"
+      ],
+      "foundVia": [
+        "YouTube"
+      ]
+    },
+    {
+      "id": "youtube:TuH28fBhTTE",
+      "videoId": "TuH28fBhTTE",
+      "title": "Posgrado de Derecho Fiscal en la Udem! 📍 #lifestyle #mexico #monterrey #universidad #motivation",
+      "excerpt": "",
+      "source": "Josue Acosta",
+      "sourceUrl": "https://www.youtube.com/channel/UCzcY1ChVrQEKZ1jizzFy_tQ",
+      "channelId": "UCzcY1ChVrQEKZ1jizzFy_tQ",
+      "url": "https://www.youtube.com/watch?v=TuH28fBhTTE",
+      "publishedAt": "2026-09-10",
+      "publishedTime": "2026-09-10T02:33:44.000Z",
+      "capturedAt": "2026-10-06T17:43:21.504Z",
+      "kind": "unverified",
+      "topic": "Institucional y otros",
+      "provenance": "youtube",
+      "queryId": "youtube-siglas",
+      "matchBasis": "Referencia explícita a Universidad de Monterrey, o UDEM junto con Monterrey / Nuevo León. Origen del canal pendiente de verificación.",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "YouTube"
+      ]
+    },
+    {
+      "id": "reconoceudemexcelenciaacademicadealumnosdistinguidos|lcrnoticias",
+      "title": "Reconoce UDEM excelencia académica de alumnos distinguidos",
+      "source": "LCR Noticias",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/AlumnosDistinguidos.jpg",
+      "publishedAt": "2026-09-05",
+      "publishedTime": "2026-09-05T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil",
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "destacanaplicacionpracticadelaingenieriaconpremiofrisaudem|elporvenir",
+      "title": "Destacan aplicación práctica de la ingeniería con Premio FRISA UDEM",
+      "source": "El Porvenir",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/PremioFrisaUDEM.jpg",
+      "publishedAt": "2026-09-05",
+      "publishedTime": "2026-09-05T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Vinculación y reconocimiento",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "eslanuevacuradorademarco|elnorte",
+      "title": "Es la nueva curadora de Marco",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/NuevaCuradora.jpg",
+      "publishedAt": "2026-09-05",
+      "publishedTime": "2026-09-05T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "destacanaplicacionpracticadelaingenieriaconpremiofrisaudem|elnorte",
+      "title": "Destacan aplicación práctica de la ingeniería con Premio FRISA-UDEM",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/PremioFRISA_UDEM.jpg",
+      "publishedAt": "2026-09-04",
+      "publishedTime": "2026-09-04T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Vinculación y reconocimiento",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "impulsapremiofrisaudemproyectosdeingenieriaconimpactoenlasociedad|milenio",
+      "title": "Impulsa Premio FRISA-UDEM proyectos de ingeniería con impacto en la sociedad",
+      "source": "Milenio",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/ImpulsaPremioFRISA_UDEM.jpg",
+      "publishedAt": "2026-09-04",
+      "publishedTime": "2026-09-04T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Vinculación y reconocimiento",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "reconocecaintralaexcelenciadualdelapreparatoriapolitecnicasantacatarina|elportaldemonterrey",
+      "title": "Reconoce Caintra la excelencia dual de la Preparatoria Politécnica Santa Catarina",
+      "source": "El Portal de Monterrey",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/CaintraPrepaPolitecnica%203.jpg",
+      "publishedAt": "2026-09-03",
+      "publishedTime": "2026-09-03T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Vinculación y reconocimiento",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "caintrareconoceapreparatoriapolitecnicasantacatarinaporformaciondual|mundoejecutivo",
+      "title": "Caintra reconoce a Preparatoria Politécnica Santa Catarina por formación dual",
+      "source": "Mundo Ejecutivo",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/CaintraPrepaPolitecnica%202.jpg",
+      "publishedAt": "2026-09-03",
+      "publishedTime": "2026-09-03T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil",
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "caintrareconoceapreparatoriapolitecnicasantacatarinaporformaciondual|reportacero",
+      "title": "Caintra reconoce a Preparatoria Politécnica Santa Catarina por formación dual",
+      "source": "Report Acero",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Caintra_reconoce_a_Preparatoria_%20Politecnica.jpg",
+      "publishedAt": "2026-09-03",
+      "publishedTime": "2026-09-03T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil",
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "realidadoesia|elnorte",
+      "title": "¿Realidad o es IA?",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Realidad_o_IA.jpg",
+      "publishedAt": "2026-09-02",
+      "publishedTime": "2026-09-02T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.923Z",
+      "kind": "external",
+      "topic": "Investigación e innovación",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-septiembre-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Investigación e innovación"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "estrenamarcocuradoradeacervo|elnorte",
+      "title": "Estrena Marco curadora de acervo",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Curadora_0.jpg",
+      "publishedAt": "2026-08-26",
+      "publishedTime": "2026-08-26T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "estalaiavolviendoflojoatucerebro|elnorte",
+      "title": "¿Está la IA volviendo flojo a tu cerebro?",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/IA_cerebroflojo.jpg",
+      "publishedAt": "2026-08-24",
+      "publishedTime": "2026-08-24T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Investigación e innovación",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Investigación e innovación"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "udeminiciaunanuevaeraconelcambiodesuliderazgorectoral|milenio",
+      "title": "UDEM inicia una nueva era con el cambio de su liderazgo rectoral",
+      "source": "Milenio",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/NuevaEra_LiderazgoRectoral.jpg",
+      "publishedAt": "2026-08-21",
+      "publishedTime": "2026-08-21T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "haceudempasedeestafetarectoraltrasunciclohistorico|elnorte",
+      "title": "Hace UDEM pase de estafeta rectoral tras un ciclo histórico",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/PaseEstafetaRectoral.jpg",
+      "publishedAt": "2026-08-21",
+      "publishedTime": "2026-08-21T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "tieneudemnuevorector|elnorte",
+      "title": "Tiene UDEM nuevo rector",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/TieneUDEMNuevoRector.jpg",
+      "publishedAt": "2026-08-21",
+      "publishedTime": "2026-08-21T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "tieneudemnuevorectortomaposesioneugeniogarzaygarza|televisamonterrey",
+      "title": "Tiene UDEM nuevo rector, toma posesión Eugenio Garza y Garza",
+      "source": "Televisa Monterrey",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/2026-08/20260820_UDEM_Televisa_0854%20%281%29.mp4",
+      "publishedAt": "2026-08-20",
+      "publishedTime": "2026-08-20T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "comienzaunnuevociclonuevo|chic",
+      "title": "Comienza un nuevo ciclo nuevo",
+      "source": "Chic",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/ComienzaNuevoCiclo.jpg",
+      "publishedAt": "2026-08-20",
+      "publishedTime": "2026-08-20T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "finalizanpremioninoemprendedor|multimediostelevision",
+      "title": "Finalizan Premio Niño Emprendedor",
+      "source": "Multimedios Televisión",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/2026-08/20260819_Udem_Mm_14.41.mp4",
+      "publishedAt": "2026-08-19",
+      "publishedTime": "2026-08-19T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Vinculación y reconocimiento",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "reconocenlasideasyplanesdeemprendimientoinfantil|milenio",
+      "title": "Reconocen las ideas y planes de emprendimiento infantil",
+      "source": "Milenio",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/emprendimiento_infantil.jpg",
+      "publishedAt": "2026-08-19",
+      "publishedTime": "2026-08-19T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Vinculación y reconocimiento",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "buscaracontinuidadinstitucionaleugeniogarzaygarzarectordelaudem|multimediostelevision",
+      "title": "Buscará continuidad institucional: Eugenio Garza y Garza, rector de la UDEM",
+      "source": "Multimedios Televisión",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/2026-08/Buscara-continuidad-institucional-Eugenio-Garza-y-Garza--rector-de-la-UDEM.mp4",
+      "publishedAt": "2026-08-18",
+      "publishedTime": "2026-08-18T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "asumeeugeniogarzacomorectordelaudem|milenio",
+      "title": "Asume Eugenio Garza como rector de la UDEM",
+      "source": "Milenio",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Asume-Eugenio-Garza-como-rector-de-la-UDEM.jpg",
+      "publishedAt": "2026-08-18",
+      "publishedTime": "2026-08-18T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "destacanuevorectorcualidadeshumanas|elnorte",
+      "title": "Destaca nuevo rector cualidades humanas",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Destaca-nuevo-rector-cualidades-humanas.jpg",
+      "publishedAt": "2026-08-18",
+      "publishedTime": "2026-08-18T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "planteaudemcrearsenderopeatonalenlaindependencia|abcnoticias",
+      "title": "Plantea UDEM crear sendero peatonal en la Independencia",
+      "source": "ABC Noticias",
+      "sourceUrl": null,
+      "url": "https://udem.edu.mx/sites/default/files/Plantea-UDEM-crear-sendero-peatonal-en-la-Independencia.jpg",
+      "publishedAt": "2026-08-17",
+      "publishedTime": "2026-08-17T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "premioestataldelajuventuddistinguetressectoressociales|milenio",
+      "title": "Premio Estatal de la Juventud distingue tres sectores sociales",
+      "source": "Milenio",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/PremioEstatal_DeLaJuventud.jpg",
+      "publishedAt": "2026-08-13",
+      "publishedTime": "2026-08-13T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Vinculación y reconocimiento",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "impulsanennydisenosostenibleconluminariasdepapelreciclado|elnorte",
+      "title": "Impulsan en NY diseño sostenible con luminarias de papel reciclado",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/ImpulsanEnNY_UDEM.jpg",
+      "publishedAt": "2026-08-11",
+      "publishedTime": "2026-08-11T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "dannuevacaraazonadeindepe|elnorte",
+      "title": "Dan nueva cara a zona de Indepe",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/DanNuevaCaraColoniaIndependencia.jpg",
+      "publishedAt": "2026-08-11",
+      "publishedTime": "2026-08-11T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "hablardeintegridadesunactonecesario|elnorte",
+      "title": "Hablar de integridad es un acto necesario",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/HablarDeIntegridad.jpg",
+      "publishedAt": "2026-08-11",
+      "publishedTime": "2026-08-11T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "impulsansupracticaconsimulador|elnorte",
+      "title": "Impulsan su práctica con simulador",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/PracticaConSimuladores.jpg",
+      "publishedAt": "2026-08-10",
+      "publishedTime": "2026-08-10T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "innovanestudiantesdeudemconintervencionmedicacomunitariaenzambia|elnorte",
+      "title": "Innovan estudiantes de UDEM con intervención médica comunitaria en Zambia",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/BrigadasMedicasZambia.jpg",
+      "publishedAt": "2026-08-10",
+      "publishedTime": "2026-08-10T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil",
+        "Salud",
+        "Investigación e innovación"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "arrancannuevosretos|elnorte",
+      "title": "Arrancan nuevos retos",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Arrancan_nuevos_retos.jpg",
+      "publishedAt": "2026-08-07",
+      "publishedTime": "2026-08-07T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "inauguranudemlaretrospectivadeeduardotamariz|elporvenir",
+      "title": "Inauguran UDEM la retrospectiva de Eduardo Tamariz",
+      "source": "El Porvenir",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Inauguran_UDEM_la_retrospectiva_de_Eduardo_Tamariz.jpg",
+      "publishedAt": "2026-08-07",
+      "publishedTime": "2026-08-07T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "backtoschool|elnorte",
+      "title": "Back to School",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Back_to_School.jpg",
+      "publishedAt": "2026-08-07",
+      "publishedTime": "2026-08-07T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "arrancanuevosemestreenlaudemconrenovacion|elporvenir",
+      "title": "Arranca nuevo semestre en la UDEM con renovación",
+      "source": "El Porvenir",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Arranca_nuevo_semestre_en_la_UDEM_con_renovacio%CC%81n.jpg",
+      "publishedAt": "2026-08-06",
+      "publishedTime": "2026-08-06T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "celebranprimeraceremoniadeinvestiduraudemhealth|elporvenir",
+      "title": "Celebran primera ceremonia de Investidura UDEM Health",
+      "source": "El Porvenir",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Celebran_primera_ceremonia_de_Investidura_UDEM_Health.jpg",
+      "publishedAt": "2026-08-05",
+      "publishedTime": "2026-08-05T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Salud",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Salud"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "arrancaenudemgestiondeeugeniogarzaygarza|abcnoticias",
+      "title": "Arranca en UDEM gestión de Eugenio Garza y Garza",
+      "source": "ABC Noticias",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Arranca%20en%20UDEM%20gestio%CC%81n%20de%20Eugenio%20Garza%20y%20Garza.jpg",
+      "publishedAt": "2026-08-04",
+      "publishedTime": "2026-08-04T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "bendicenbatasymanosdealumnosdeudem|elnorte",
+      "title": "Bendicen batas y manos de alumnos de UDEM",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Bendicen%20batas%20y%20manos%20de%20alumnos%20de%20UDEM.jpg",
+      "publishedAt": "2026-08-04",
+      "publishedTime": "2026-08-04T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "reinicianclasesuanlyudem|elnorte",
+      "title": "Reinician clases UANL y UDEM",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Reinician%20clases%20UANL%20y%20UDEM.jpg",
+      "publishedAt": "2026-08-04",
+      "publishedTime": "2026-08-04T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "subencasosdeansiedadydepresion|multimediostelevision",
+      "title": "Suben casos de ansiedad y depresión",
+      "source": "Multimedios Televisión",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/2026-08/salud_mental.mp4",
+      "publishedAt": "2026-08-03",
+      "publishedTime": "2026-08-03T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "essumetaimpulsartrayectoriasexitosas|elnorte",
+      "title": "Es su meta impulsar trayectorias exitosas",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Eugenio_Garza_y_Garza.jpg",
+      "publishedAt": "2026-08-03",
+      "publishedTime": "2026-08-03T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "apuntanaansiedadydepresioncomotemasdeatencionennl|milenio",
+      "title": "Apuntan a ansiedad y depresión como temas de atención en NL",
+      "source": "Milenio",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Apuntan%20a%20ansiedad%20y%20depresio%CC%81n%20como%20temas%20de%20atencio%CC%81n%20en%20NL.jpg",
+      "publishedAt": "2026-08-03",
+      "publishedTime": "2026-08-03T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "fortaleceudemsupropuestaacademica|elnorte",
+      "title": "Fortalece UDEM su propuesta académica",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/UDEM_Regreso_Clases.jpg",
+      "publishedAt": "2026-08-02",
+      "publishedTime": "2026-08-02T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "llegahastanycreatividadycompromisoambientaldelaudem|elporvenir",
+      "title": "Llega hasta NY creatividad y compromiso ambiental de la UDEM",
+      "source": "El Porvenir",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Llega_hasta_NY_creatividad_compromiso_ambiental_de_la_UDEM.jpg",
+      "publishedAt": "2026-08-02",
+      "publishedTime": "2026-08-02T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.925Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-agosto-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "urgenespecialistasatransformarlamovilidad|gamavision",
+      "title": "Urgen especialistas a transformar la movilidad",
+      "source": "Gamavisión",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/2026-07/Especialistas_movilidad.mp3",
+      "publishedAt": "2026-07-31",
+      "publishedTime": "2026-07-31T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "debutaudemennuevayorkconluminariasdepapelreciclado|elporvenirnbsp",
+      "title": "Debuta UDEM en Nueva York con luminarias de papel reciclado",
+      "source": "El Porvenir&nbsp;",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Luminarias_reciclado.jpg",
+      "publishedAt": "2026-07-31",
+      "publishedTime": "2026-07-31T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "resaltanimportanciadeeticaeniaespecialistasacademicosennludem|telediarionbsp",
+      "title": "Resaltan importancia de ética en IA, especialistas académicos en NL (UDEM)",
+      "source": "Telediario&nbsp;",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/2026-07/20260727_UDEM_MMTV_0716.mp4",
+      "publishedAt": "2026-07-27",
+      "publishedTime": "2026-07-27T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil",
+        "Investigación e innovación"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "academicosresaltanlosretosdeusariaenuniversidades|mileniodiario",
+      "title": "Académicos resaltan los retos de usar IA en Universidades",
+      "source": "Milenio Diario",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/IA_Universidades.jpg",
+      "publishedAt": "2026-07-27",
+      "publishedTime": "2026-07-27T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Educación y experiencia estudiantil",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Educación y experiencia estudiantil",
+        "Investigación e innovación"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "impulsanaemprendedoras|elnorte",
+      "title": "Impulsan a emprendedoras",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/KimakulenCintermex.jpg",
+      "publishedAt": "2026-07-24",
+      "publishedTime": "2026-07-24T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "tuberculosisavanzaennlcontagiosde2026yasuperanlamitaddetodosloscasosde2025|abcnoticias",
+      "title": "Tuberculosis avanza en NL: contagios de 2026 ya superan la mitad de todos los casos de 2025",
+      "source": "ABC Noticias",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/atencio%CC%81n_tuberculosis_NL.jpg",
+      "publishedAt": "2026-07-22",
+      "publishedTime": "2026-07-22T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "recibemaestradelaudemreconocimientointernacional|lcrnoticiasnbsp",
+      "title": "Recibe maestra de la UDEM reconocimiento internacional",
+      "source": "LCR Noticias&nbsp;",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/maestra_reconocimiento_0.jpg",
+      "publishedAt": "2026-07-22",
+      "publishedTime": "2026-07-22T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Vinculación y reconocimiento",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "resaltanlaborvigentedebibliotecarios|elnorte",
+      "title": "Resaltan labor vigente de bibliotecarios",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/Bibliotecarios_destacados.jpg",
+      "publishedAt": "2026-07-21",
+      "publishedTime": "2026-07-21T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "vuelvelaodiseaparaconquistar|elnorte",
+      "title": "Vuelve \"La Odisea\" para conquistar",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/LaOdisea_Regresa.jpg",
+      "publishedAt": "2026-07-20",
+      "publishedTime": "2026-07-20T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "atreveteadecirnoalriesgo|elnorte",
+      "title": "Atrévete a decir no al riesgo",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/NoalRiesgo.jpg",
+      "publishedAt": "2026-07-19",
+      "publishedTime": "2026-07-19T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "cosechanregiasorosencolombia|elnorte",
+      "title": "Cosechan regias oros en Colombia",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/OrosParaTroyanas.jpg",
+      "publishedAt": "2026-07-13",
+      "publishedTime": "2026-07-13T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "realizaraudemcumbrejuvenilporelplaneta|elnorte",
+      "title": "Realizará UDEM Cumbre juvenil por el planeta",
+      "source": "El Norte",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/CumbreJuvenil.jpg",
+      "publishedAt": "2026-07-10",
+      "publishedTime": "2026-07-10T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Institucional y otros",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Institucional y otros"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "entrevistaconbiologalauramartinezcoordinadoradeldesarrollodelaculturaecologicadelcentrodesostenibilidaddelaudem|multimediosradionbsp",
+      "title": "Entrevista con Bióloga Laura Martínez, Coordinadora del Desarrollo de la Cultura Ecológica del Centro de Sostenibilidad de la UDEM",
+      "source": "Multimedios Radio&nbsp;",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/2026-07/Di%CC%81adelA%CC%81rbol.mp3",
+      "publishedAt": "2026-07-09",
+      "publishedTime": "2026-07-09T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Cultura, deportes y comunidad",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Cultura, deportes y comunidad"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    },
+    {
+      "id": "reconocecimenlaingenierosensudia|elnortenbsp",
+      "title": "Reconoce CIMENL a ingenieros en su día",
+      "source": "El Norte&nbsp;",
+      "sourceUrl": null,
+      "url": "https://www.udem.edu.mx/sites/default/files/IngenierasUDEM.jpg",
+      "publishedAt": "2026-07-09",
+      "publishedTime": "2026-07-09T12:00:00.000Z",
+      "capturedAt": "2026-10-05T17:18:43.927Z",
+      "kind": "external",
+      "topic": "Vinculación y reconocimiento",
+      "provenance": "clipping",
+      "archiveUrl": "https://www.udem.edu.mx/es/institucional/udem-en-la-prensa-julio-2026",
+      "dateBasis": "Fecha indicada en el archivo de prensa de UDEM",
+      "topics": [
+        "Vinculación y reconocimiento"
+      ],
+      "foundVia": [
+        "UDEM en la prensa"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "id": "youtube-nombre",
+      "label": "YouTube · Universidad de Monterrey",
+      "provider": "YouTube API",
+      "status": "ok",
+      "count": 3,
+      "received": 25,
+      "discarded": 22,
+      "limited": true
+    },
+    {
+      "id": "youtube-siglas",
+      "label": "YouTube · UDEM + Monterrey",
+      "provider": "YouTube API",
+      "status": "ok",
+      "count": 7,
+      "received": 25,
+      "discarded": 18,
+      "limited": true
+    },
+    {
+      "id": "newsdata-nombre",
+      "label": "NewsData.io · Universidad de Monterrey",
+      "provider": "NewsData.io",
+      "status": "ok",
+      "received": 2,
+      "count": 0,
+      "discarded": 2
+    },
+    {
+      "id": "newsdata-siglas",
+      "label": "NewsData.io · UDEM",
+      "provider": "NewsData.io",
+      "status": "ok",
+      "received": 2,
+      "count": 1,
+      "discarded": 1
+    }
+  ],
+  "checkedAt": "2026-10-05T17:18:43.936Z",
+  "mode": "snapshot",
+  "provider": "UDEM en la prensa + YouTube API + NewsData.io",
+  "youtubeActive": true,
+  "newsdataActive": true
+}
