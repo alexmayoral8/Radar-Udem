@@ -12,7 +12,7 @@ concurrency:
 jobs:
   actualizar:
     runs-on: ubuntu-latest
-    timeout-minutes: 6
+    timeout-minutes: 40
     steps:
       - name: Recolectar noticias y generar panorama de viernes
         env:
@@ -22,8 +22,18 @@ jobs:
           set -euo pipefail
           test -n "$RADAR_URL"
           test -n "$AUTOMATION_TOKEN"
-          curl --fail-with-body --retry 2 --max-time 240 \
+          # Cada invocación consulta una sola fuente, para respetar el límite de subrequests de Workers Free.
+          for source in who paho unesco amee aamc funsalud oecd bmc mayo harvard stanford duke mcmaster hopkins mit imperial tec uanl unam udg uc inova; do
+            echo "Consultando fuente: $source"
+            curl --silent --show-error --fail-with-body --retry 1 --max-time 100 \
+              --request POST \
+              --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+              "${RADAR_URL%/}/api/automation/run?source=${source}"
+            echo
+          done
+          echo "Comprobando generación del panorama de viernes..."
+          curl --silent --show-error --fail-with-body --max-time 150 \
             --request POST \
             --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
-            --header "Content-Type: application/json" \
-            "${RADAR_URL%/}/api/automation/run"
+            "${RADAR_URL%/}/api/automation/run?finalize=1"
+
