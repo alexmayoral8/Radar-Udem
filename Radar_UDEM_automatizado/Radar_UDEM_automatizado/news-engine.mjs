@@ -354,13 +354,14 @@ export async function sourceCandidates(s,fetchPage){
  const html=await fetchPage(s.listingUrl||s.url);
  return candidates(s,html);
 }
-export async function collect(fetchPage=request){
+export async function collect(fetchPage=request, sourceIds=null){
+ const selected=sourceIds?SOURCES.filter(s=>sourceIds.includes(s.id)):SOURCES;
  const checkedAt=new Date().toISOString();
- const results=await pool(SOURCES,async s=>{try{
+ const results=await pool(selected,async s=>{try{
   const links=await sourceCandidates(s,fetchPage);if(!links.length)throw Error('No se identificaron enlaces de artículos en la respuesta recibida. Esto no confirma un bloqueo: el listado puede cargar dinámicamente o haber cambiado de estructura.');
   const errors=[];let discarded=0;
-  const articles=(await pool(links,async link=>{try{const item=article(s,link,await fetchPage(link.url));if(!item)discarded++;return item}catch(e){errors.push({error:e.name==='AbortError'?'Tiempo de espera agotado':e.message});return null}},2)).filter(Boolean);
-  return {sourceId:s.id,name:s.name,url:s.url,group:s.group,collectionNote:s.collectionNote||null,status:errors.length===links.length?'error':errors.length?'partial':'ok',checkedAt,articles,errors,scanned:links.length,discarded};
+  const articles=(await pool(links.slice(0,12),async link=>{try{const item=article(s,link,await fetchPage(link.url));if(!item)discarded++;return item}catch(e){errors.push({error:e.name==='AbortError'?'Tiempo de espera agotado':e.message});return null}},2)).filter(Boolean);
+  return {sourceId:s.id,name:s.name,url:s.url,group:s.group,collectionNote:s.collectionNote||null,status:errors.length===links.length?'error':errors.length?'partial':'ok',checkedAt,articles,errors,scanned:Math.min(links.length,12),discarded};
  }catch(e){return {sourceId:s.id,name:s.name,url:s.url,group:s.group,collectionNote:s.collectionNote||null,status:'error',checkedAt,articles:[],errors:[{error:e.name==='AbortError'?'Tiempo de espera agotado':e.message}],scanned:0,discarded:0}}},8);
  const news=[...new Map(results.flatMap(r=>r.articles).map(a=>[a.url,a])).values()].sort((a,b)=>(b.publishedAt||'').localeCompare(a.publishedAt||''));
  return {checkedAt,news,sources:results.map(({articles,...r})=>({...r,count:articles.length})),windowDays:120,mode:'live',categories:CATEGORIES};
