@@ -13,27 +13,32 @@ export default {async fetch(request,env,ctx){
  const url=new URL(request.url);
  if(url.pathname==='/api/automation/run'){
   if(request.method!=='POST')return new Response('Método no permitido',{status:405});
-  const expected=env.AUTOMATION_TOKEN;
-  if(!expected||request.headers.get('Authorization')!=='Bearer '+expected)return new Response('No autorizado',{status:401});
+  if(!env.AUTOMATION_TOKEN||request.headers.get('Authorization')!=='Bearer '+env.AUTOMATION_TOKEN)return new Response('No autorizado',{status:401});
   try{
-   const persisted=await weeklySnapshot(env.DB,lastResult||SEED);
-   const fresh=await collect();
-   const failed=new Set(fresh.sources.filter(s=>s.status==='error').map(s=>s.sourceId));
-   const previous=(persisted.news||[]).filter(n=>failed.has(n.sourceId)).map(n=>({...n,stale:true}));
-   if(previous.length)fresh.news=[...fresh.news,...previous].sort((a,b)=>(b.publishedAt||'').localeCompare(a.publishedAt||''));
-   if(fresh.sources.every(s=>s.status==='error')){
-    return Response.json({ok:false,status:'sources_unavailable',checkedAt:fresh.checkedAt},{status:503});
+   const sourceId=url.searchParams.get('source');
+   const finalize=url.searchParams.get('finalize')==='1';
+   if(finalize){
+    const existing=await weeklySnapshot(env.DB,SEED);
+    const weekday=new Intl.DateTimeFormat('en-US',{timeZone:'America/Monterrey',weekday:'short'}).format(new Date());
+    if(weekday!=='Fri')return Response.json({ok:true,weeklyStatus:'skipped',articleCount:existing.news.length});
+    const summary=await weeklySummaryResponse(env,existing);
+    const details=await summary.json();
+    return Response.json({ok:summary.ok,weeklyStatus:details.status,weeklyGeneratedCount:details.generatedCount||0,articleCount:existing.news.length},{status:summary.ok?200:503});
    }
-   await weeklySaveSnapshot(env.DB,fresh);
-   lastResult=fresh;lastResultAt=Date.now();
-   const weekday=new Intl.DateTimeFormat('en-US',{timeZone:'America/Monterrey',weekday:'short'}).format(new Date());
-   let weekly={status:'skipped'};
-   if(weekday==='Fri'){
-    const res=await weeklySummaryResponse(env,fresh);
-    weekly=await res.json();
-   }
-   return Response.json({ok:true,checkedAt:fresh.checkedAt,articleCount:fresh.news.length,sourceCount:fresh.sources.length,failedSources:[...failed],weeklyStatus:weekly.status,weeklyGeneratedCount:weekly.generatedCount||0},{status:weekday==='Fri'&&weekly.status==='unavailable'?503:200,headers:{'Cache-Control':'no-store'}});
-  }catch(e){return Response.json({ok:false,status:'error',message:'La ejecución automática falló.'},{status:500});}
+   if(!sourceId||!SOURCES.some(s=>s.id===sourceId))return Response.json({ok:false,message:'Especifica source con un ID válido.'},{status:400});
+   const previous=await weeklySnapshot(env.DB,SEED);
+   const fresh=await collect(undefined,[sourceId]);
+   const status=fresh.sources[0];
+   const oldNews=(previous.news||[]).filter(n=>n.sourceId===sourceId);
+   const newsForSource=status.status==='error'?oldNews.map(n=>({...n,stale:true})):fresh.news;
+   const otherNews=(previous.news||[]).filter(n=>n.sourceId!==sourceId);
+   const news=[...new Map([...otherNews,...newsForSource].map(n=>[n.url,n])).values()].sort((a,b)=>(b.publishedAt||'').localeCompare(a.publishedAt||''));
+   const otherSources=(previous.sources||[]).filter(s=>s.sourceId!==sourceId);
+   const merged={...previous,checkedAt:new Date().toISOString(),news,sources:[...otherSources,{...status,historicalCount:status.status==='error'?oldNews.length:0}],mode:'live'};
+   await weeklySaveSnapshot(env.DB,merged);
+   lastResult=merged;lastResultAt=Date.now();
+   return Response.json({ok:true,sourceId,status:status.status,newArticles:fresh.news.length,articleCount:news.length,issues:status.errors?.slice(0,2).map(e=>e.error)||[]},{headers:{'Cache-Control':'no-store'}});
+  }catch(e){return Response.json({ok:false,status:'error',message:String(e?.message||'Error de actualización').slice(0,160)},{status:500});}
  }
  if(url.pathname==='/api/weekly-summary'){
   if(request.method!=='GET')return new Response('Método no permitido',{status:405});
@@ -54,21 +59,9 @@ export default {async fetch(request,env,ctx){
  }
  if(url.pathname==='/api/news'){
   if(!['GET','POST'].includes(request.method))return new Response('Método no permitido',{status:405});
-  if(request.method==='GET'&&lastResult&&Date.now()-lastResultAt<900000)return Response.json(lastResult,{headers:{'Cache-Control':'no-store'}});
-  const persisted=await weeklySnapshot(env.DB,lastResult||SEED);
-  if(request.method==='GET'&&persisted.checkedAt&&Date.now()-Date.parse(persisted.checkedAt)<900000){lastResult=persisted;lastResultAt=Date.parse(persisted.checkedAt);return Response.json(persisted,{headers:{'Cache-Control':'no-store'}});}
-  if(!inflight)inflight=collect().finally(()=>{inflight=null});
-  let data=await inflight;
-  const history=persisted;
-  const failed=new Set(data.sources.filter(s=>s.status==='error').map(s=>s.sourceId));
-  const previous=history.news.filter(n=>failed.has(n.sourceId)).map(n=>({...n,stale:true}));
-  if(previous.length)data={...data,news:[...data.news,...previous].sort((a,b)=>(b.publishedAt||'').localeCompare(a.publishedAt||'')),warning:'Algunas fuentes no respondieron. Sus publicaciones anteriores están identificadas con la fecha de captura.'};
-  if(data.sources.every(s=>s.status==='error'))data={...data,mode:'fallback',attemptedAt:data.checkedAt,checkedAt:history.checkedAt};
-  data.sources=data.sources.map(s=>({...s,historicalCount:previous.filter(n=>n.sourceId===s.sourceId).length}));
-  const response=Response.json(data,{headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
-  await weeklySaveSnapshot(env.DB,data);
-  lastResult=data;lastResultAt=Date.now();
-  return response;
+  const persisted=await weeklySnapshot(env.DB,SEED);
+  lastResult=persisted;lastResultAt=Date.now();
+  return Response.json(persisted,{headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});
  }
  if(!['GET','HEAD'].includes(request.method))return new Response('Método no permitido',{status:405});
  const path=url.pathname==='/'?'/index.html':url.pathname,asset=ASSETS[path];
