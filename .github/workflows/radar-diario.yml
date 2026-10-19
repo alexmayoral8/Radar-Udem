@@ -1,0 +1,29 @@
+name: Actualizar Radar UDEM Health
+on:
+  schedule:
+    # 07:00 en Monterrey (UTC-6, sin horario de verano)
+    - cron: '0 13 * * 1-5'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: radar-udem-automation
+  cancel-in-progress: false
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - name: Recolectar noticias y generar panorama de viernes
+        env:
+          RADAR_URL: ${{ secrets.RADAR_URL }}
+          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$RADAR_URL"
+          test -n "$AUTOMATION_TOKEN"
+          curl --fail-with-body --retry 2 --max-time 240 \
+            --request POST \
+            --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+            --header "Content-Type: application/json" \
+            "${RADAR_URL%/}/api/automation/run"
