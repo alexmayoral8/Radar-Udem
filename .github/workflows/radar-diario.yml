@@ -23,7 +23,7 @@ jobs:
           test -n "$RADAR_URL"
           test -n "$AUTOMATION_TOKEN"
           # Cada invocación consulta una sola fuente, para respetar el límite de subrequests de Workers Free.
-          for source in who paho unesco amee aamc funsalud oecd bmc mayo harvard stanford duke mcmaster hopkins mit imperial tec uanl unam udg uc inova; do
+          for source in who paho unesco amee aamc funsalud oecd bmc mayo harvard stanford duke mcmaster hopkins mit imperial tec uanl unam udg uc inova stat conversation_health conversation_education nature_news nature_research; do
             echo "Consultando fuente: $source"
             curl --silent --show-error --fail-with-body --retry 1 --max-time 100 \
               --request POST \
@@ -31,9 +31,17 @@ jobs:
               "${RADAR_URL%/}/api/automation/run?source=${source}"
             echo
           done
+          echo "Actualizando canales de video cuando exista API Key en Cloudflare..."
+          for channel in who paho tec harvard nature ted frontiers uchicago; do
+            echo "Canal: $channel"
+            curl --silent --show-error --max-time 60 \
+              --request POST \
+              --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+              "${RADAR_URL%/}/api/automation/run?video=${channel}" || true
+            echo
+          done
           echo "Comprobando generación del panorama de viernes..."
           curl --silent --show-error --fail-with-body --max-time 150 \
             --request POST \
             --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
             "${RADAR_URL%/}/api/automation/run?finalize=1"
-
