@@ -40,6 +40,15 @@ jobs:
               "${RADAR_URL%/}/api/automation/run?video=${channel}" || true
             echo
           done
+          echo "Buscando menciones de directivos para revisión editorial..."
+          for leader in tec up uanl hms mayo; do
+            echo "Líder: $leader"
+            curl --silent --show-error --max-time 55 \
+              --request POST \
+              --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+              "${RADAR_URL%/}/api/automation/run?leader=${leader}" || true
+            echo
+          done
           echo "Comprobando generación del panorama de viernes..."
           curl --silent --show-error --fail-with-body --max-time 150 \
             --request POST \
