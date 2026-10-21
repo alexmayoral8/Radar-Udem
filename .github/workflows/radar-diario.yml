@@ -41,7 +41,7 @@ jobs:
             echo
           done
           echo "Buscando menciones de directivos para revisión editorial..."
-          for leader in tec up uanl hms mayo; do
+          for leader in tec udem who paho mayo uanl up_medicine up; do
             echo "Líder: $leader"
             curl --silent --show-error --max-time 55 \
               --request POST \
