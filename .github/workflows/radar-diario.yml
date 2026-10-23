@@ -20,9 +20,6 @@ jobs:
     timeout-minutes: 40
 
     steps:
-      - name: Descargar archivos del repositorio
-        uses: actions/checkout@v4
-
       - name: Recolectar noticias y generar panorama de viernes
         env:
           RADAR_URL: ${{ secrets.RADAR_URL }}
@@ -33,7 +30,7 @@ jobs:
           test -n "$AUTOMATION_TOKEN"
 
           # Cada invocación consulta una sola fuente.
-          for source in who paho unesco amee aamc funsalud oecd bmc mayo harvard stanford duke mcmaster hopkins mit imperial tec uanl unam udg uc inova stat conversation_health conversation_education nature_news nature_research npj_digital_research npj_digital_comment lancet_digital deepmind_ai mittech_ai healthcareit_ai anthropic_ai google_health_ai openai_research_ai openai_applied_ai forbes_health_ai stanford_hai_ai; do
+          for source in who paho unesco amee aamc funsalud oecd bmc mayo harvard stanford duke mcmaster hopkins mit imperial tec uanl unam udg uc inova stat conversation_health conversation_education nature_news nature_research npj_digital_research npj_digital_comment lancet_digital deepmind_ai mittech_ai healthcareit_ai anthropic_ai google_health_ai openai_research_ai openai_applied_ai forbes_health_ai stanford_hai_ai techtarget_ai ama_ai rice_kennedy_ai stanford_raise_ai modernhealth_ai openevidence_ai mayo_digital_ai bmj_digital_ai nejm_ai; do
             echo "Consultando fuente: $source"
             curl --silent --show-error --fail-with-body --retry 1 --max-time 100 \
               --request POST \
@@ -76,39 +73,60 @@ jobs:
             "${RADAR_URL%/}/api/automation/run?finalize=1"
           echo
 
-      - name: Diagnosticar conexión con Cloudflare
-        env:
-          RADAR_URL: ${{ secrets.RADAR_URL }}
-          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+      # PRUEBA NUEVA: Google Noticias RSS desde GitHub Actions.
+      # Solo lee noticias. No modifica Cloudflare ni la base D1.
+      - name: Probar Google Noticias RSS - Líderes
         run: |
-          echo "Comprobando endpoint de importación RSS..."
+          python3 - <<'PY'
+          import urllib.request
+          import urllib.error
+          from urllib.parse import urlencode
+          import xml.etree.ElementTree as ET
 
-          curl --silent --show-error \
-            --max-time 30 \
-            --dump-header /tmp/headers.txt \
-            --output /tmp/respuesta.txt \
-            --write-out 'HTTP: %{http_code}\n' \
-            --request POST \
-            --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
-            --header "Content-Type: application/json" \
-            --data '{"leaderId":"tec","items":[]}' \
-            "${RADAR_URL%/}/api/automation/run?leaderRssImport=1"
+          busquedas = {
+              "Dra. Lilia García": "lilia garcia universidad de monterrey",
+              "Guillermo Torre-Amione": "guillermo torre amione tecsalud"
+          }
 
-          echo "Cabeceras:"
-          grep -iE '^(HTTP/|server:|content-type:|cf-ray:)' /tmp/headers.txt || true
+          for lider, consulta in busquedas.items():
+              print(f"\n=== {lider} ===", flush=True)
+              print(f"Búsqueda: {consulta}", flush=True)
 
-          echo "Respuesta:"
-          head -c 800 /tmp/respuesta.txt
-          echo
+              url = "https://news.google.com/rss/search?" + urlencode({
+                  "q": consulta,
+                  "hl": "es-419",
+                  "gl": "MX",
+                  "ceid": "MX:es-419"
+              })
 
-      # Recopilación RSS desde GitHub, sin gastar consultas de GNews.io.
-      # Los candidatos se transfieren por HTTPS al Worker, protegidos por AUTOMATION_TOKEN.
-      - name: Importar Google Noticias RSS - 8 líderes
-        env:
-          RADAR_URL: ${{ secrets.RADAR_URL }}
-          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
-        run: |
-          set -euo pipefail
-          test -n "$RADAR_URL"
-          test -n "$AUTOMATION_TOKEN"
-          python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_lideres.py
+              try:
+                  request = urllib.request.Request(
+                      url,
+                      headers={
+                          "User-Agent": "Mozilla/5.0",
+                          "Accept": "application/rss+xml, application/xml"
+                      }
+                  )
+
+                  with urllib.request.urlopen(request, timeout=25) as response:
+                      status = response.status
+                      content = response.read(2_000_000)
+
+                  root = ET.fromstring(content)
+                  articles = root.findall(".//item")
+
+                  print(f"HTTP: {status}")
+                  print(f"Noticias recuperadas: {len(articles)}")
+
+                  for article in articles[:10]:
+                      print("Título:", article.findtext("title", "Sin título"))
+                      print("Fecha:", article.findtext("pubDate", "Sin fecha"))
+                      print("Enlace:", article.findtext("link", "Sin enlace"))
+                      print("---")
+
+              except urllib.error.HTTPError as error:
+                  print(f"Error HTTP: {error.code}")
+              except Exception as error:
+                  print(f"Error: {type(error).__name__}: {error}")
+
+          PY
