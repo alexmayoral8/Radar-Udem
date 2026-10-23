@@ -20,6 +20,9 @@ jobs:
     timeout-minutes: 40
 
     steps:
+      - name: Descargar archivos del repositorio
+        uses: actions/checkout@v4
+
       - name: Recolectar noticias y generar panorama de viernes
         env:
           RADAR_URL: ${{ secrets.RADAR_URL }}
