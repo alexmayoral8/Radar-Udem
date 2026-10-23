@@ -1,18 +1,24 @@
+
 name: Actualizar Radar UDEM Health
+
 on:
   schedule:
     # 07:00 en Monterrey (UTC-6, sin horario de verano)
     - cron: '0 13 * * 1-5'
   workflow_dispatch:
+
 permissions:
   contents: read
+
 concurrency:
   group: radar-udem-automation
   cancel-in-progress: false
+
 jobs:
   actualizar:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+
     steps:
       - name: Recolectar noticias y generar panorama de viernes
         env:
@@ -22,7 +28,8 @@ jobs:
           set -euo pipefail
           test -n "$RADAR_URL"
           test -n "$AUTOMATION_TOKEN"
-          # Cada invocación consulta una sola fuente, para respetar el límite de subrequests de Workers Free.
+
+          # Cada invocación consulta una sola fuente.
           for source in who paho unesco amee aamc funsalud oecd bmc mayo harvard stanford duke mcmaster hopkins mit imperial tec uanl unam udg uc inova stat conversation_health conversation_education nature_news nature_research npj_digital_research npj_digital_comment lancet_digital deepmind_ai mittech_ai healthcareit_ai anthropic_ai google_health_ai openai_research_ai openai_applied_ai forbes_health_ai stanford_hai_ai; do
             echo "Consultando fuente: $source"
             curl --silent --show-error --fail-with-body --retry 1 --max-time 100 \
@@ -30,14 +37,16 @@ jobs:
               --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
               "${RADAR_URL%/}/api/automation/run?source=${source}"
             echo
+
             case "$source" in
-            nature_news|nature_research|npj_digital_research|npj_digital_comment)
-              echo "Esperando antes de consultar la siguiente fuente..."
-              sleep 3
-              ;;
-          esac
+              nature_news|nature_research|npj_digital_research|npj_digital_comment)
+                echo "Esperando antes de consultar la siguiente fuente..."
+                sleep 3
+                ;;
+            esac
           done
-          echo "Actualizando canales de video cuando exista API Key en Cloudflare..."
+
+          echo "Actualizando canales de video..."
           for channel in who paho tec harvard nature ted frontiers uchicago; do
             echo "Canal: $channel"
             curl --silent --show-error --max-time 60 \
@@ -46,7 +55,8 @@ jobs:
               "${RADAR_URL%/}/api/automation/run?video=${channel}" || true
             echo
           done
-          echo "Buscando menciones de directivos para revisión editorial..."
+
+          echo "Buscando menciones de directivos..."
           for leader in tec udem who paho mayo uanl up_medicine up; do
             echo "Líder: $leader"
             curl --silent --show-error --max-time 55 \
@@ -55,8 +65,68 @@ jobs:
               "${RADAR_URL%/}/api/automation/run?leader=${leader}" || true
             echo
           done
-          echo "Comprobando generación del panorama de viernes..."
+
+          echo "Comprobando generación del panorama..."
           curl --silent --show-error --fail-with-body --max-time 150 \
             --request POST \
             --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
             "${RADAR_URL%/}/api/automation/run?finalize=1"
+          echo
+
+      # PRUEBA NUEVA: Google Noticias RSS desde GitHub Actions.
+      # Solo lee noticias. No modifica Cloudflare ni la base D1.
+      - name: Probar Google Noticias RSS - Líderes
+        run: |
+          python3 - <<'PY'
+          import urllib.request
+          import urllib.error
+          from urllib.parse import urlencode
+          import xml.etree.ElementTree as ET
+
+          busquedas = {
+              "Dra. Lilia García": "lilia garcia universidad de monterrey",
+              "Guillermo Torre-Amione": "guillermo torre amione tecsalud"
+          }
+
+          for lider, consulta in busquedas.items():
+              print(f"\n=== {lider} ===", flush=True)
+              print(f"Búsqueda: {consulta}", flush=True)
+
+              url = "https://news.google.com/rss/search?" + urlencode({
+                  "q": consulta,
+                  "hl": "es-419",
+                  "gl": "MX",
+                  "ceid": "MX:es-419"
+              })
+
+              try:
+                  request = urllib.request.Request(
+                      url,
+                      headers={
+                          "User-Agent": "Mozilla/5.0",
+                          "Accept": "application/rss+xml, application/xml"
+                      }
+                  )
+
+                  with urllib.request.urlopen(request, timeout=25) as response:
+                      status = response.status
+                      content = response.read(2_000_000)
+
+                  root = ET.fromstring(content)
+                  articles = root.findall(".//item")
+
+                  print(f"HTTP: {status}")
+                  print(f"Noticias recuperadas: {len(articles)}")
+
+                  for article in articles[:10]:
+                      print("Título:", article.findtext("title", "Sin título"))
+                      print("Fecha:", article.findtext("pubDate", "Sin fecha"))
+                      print("Enlace:", article.findtext("link", "Sin enlace"))
+                      print("---")
+
+              except urllib.error.HTTPError as error:
+                  print(f"Error HTTP: {error.code}")
+              except Exception as error:
+                  print(f"Error: {type(error).__name__}: {error}")
+
+          PY
