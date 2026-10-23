@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
 """Lee RSS público de Google Noticias en GitHub Actions y envía candidatos a D1.
 No descarga artículos ni infiere declaraciones personales.
 """
 import json
 import os
+import subprocess
 import time
 import urllib.error
 import urllib.request
@@ -60,13 +60,45 @@ def read_rss(query):
 
 
 def ingest(leader, items):
-    data=json.dumps({'leaderId':leader,'items':items},ensure_ascii=False).encode('utf-8')
-    req=urllib.request.Request(BASE+'/api/automation/run?leaderRssImport=1',data=data,method='POST',headers={
-        'Authorization':'Bearer '+TOKEN, 'Content-Type':'application/json',
-        'Accept':'application/json'})
-    with urllib.request.urlopen(req,timeout=35) as res:
-        response=json.loads(res.read(20000))
-    return response
+    """Utiliza curl (mismo cliente que respondió HTTP 200 en el diagnóstico).
+
+    Dividimos en lotes pequeños para reducir rechazos de seguridad o tamaño.
+    Nunca imprimimos el token en los registros.
+    """
+    totals={'ok':True,'leader':leader,'received':0,'saved':0,'existing':0,'discarded':0}
+    batches=[items[i:i+8] for i in range(0,len(items),8)] or [[]]
+    for part_no, batch in enumerate(batches,1):
+        data=json.dumps({'leaderId':leader,'items':batch},ensure_ascii=False)
+        command=[
+            'curl','--silent','--show-error','--max-time','45',
+            '--request','POST',
+            '--header','Authorization: Bearer '+TOKEN,
+            '--header','Content-Type: application/json',
+            '--header','Accept: application/json',
+            '--data-binary','@-',
+            '--write-out','\n__HTTP_STATUS__:%{http_code}',
+            BASE+'/api/automation/run?leaderRssImport=1'
+        ]
+        process=subprocess.run(command,input=data,text=True,capture_output=True,timeout=50)
+        output=process.stdout
+        marker='\n__HTTP_STATUS__:'
+        if marker not in output:
+            raise RuntimeError(f'Lote {part_no}/{len(batches)}: curl no devolvió código HTTP; '+process.stderr[:180])
+        body, status_text=output.rsplit(marker,1)
+        try: status=int(status_text.strip())
+        except ValueError: status=0
+        if status!=200 or process.returncode!=0:
+            # Solo muestra una muestra de la respuesta (no cabeceras ni token).
+            raise RuntimeError(f'Lote {part_no}/{len(batches)}: HTTP {status}, curl={process.returncode}; respuesta: {body[:240]!r}; detalle: {process.stderr[:120]!r}')
+        try: result=json.loads(body)
+        except json.JSONDecodeError:
+            raise RuntimeError(f'Lote {part_no}/{len(batches)}: respuesta JSON inválida: {body[:180]!r}')
+        if result.get('ok') is not True:
+            raise RuntimeError(f'Lote {part_no}/{len(batches)}: Worker rechazó: {str(result)[:200]}')
+        for field in ('received','saved','existing','discarded'):
+            totals[field]+=int(result.get(field,0))
+        print(f'  Lote {part_no}/{len(batches)}: recibidas={result.get("received",0)}, guardadas={result.get("saved",0)}, existentes={result.get("existing",0)}',flush=True)
+    return totals
 
 
 def main():
@@ -81,7 +113,7 @@ def main():
             print('  Importación D1: '+json.dumps(result,ensure_ascii=False),flush=True)
             if not result.get('ok'):raise RuntimeError('El Worker rechazó la importación')
             successes+=1
-        except (urllib.error.HTTPError,urllib.error.URLError,ValueError,ET.ParseError,RuntimeError) as error:
+        except (urllib.error.HTTPError,urllib.error.URLError,ValueError,ET.ParseError,RuntimeError,subprocess.TimeoutExpired) as error:
             print(f'  AVISO: {type(error).__name__}: {str(error)[:180]}',flush=True)
     if not successes:
         raise SystemExit('No fue posible importar ninguna fuente RSS: verifica el despliegue del Worker y los secretos.')
