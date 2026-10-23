@@ -30,6 +30,12 @@ jobs:
               --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
               "${RADAR_URL%/}/api/automation/run?source=${source}"
             echo
+            case "$source" in
+            nature_news|nature_research|npj_digital_research|npj_digital_comment)
+              echo "Esperando antes de consultar la siguiente fuente..."
+              sleep 3
+              ;;
+          esac
           done
           echo "Actualizando canales de video cuando exista API Key en Cloudflare..."
           for channel in who paho tec harvard nature ted frontiers uchicago; do
