@@ -83,5 +83,4 @@ jobs:
           set -euo pipefail
           test -n "$RADAR_URL"
           test -n "$AUTOMATION_TOKEN"
-          python3 scripts/importar_google_news_lideres.py
-
+          python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_lideres.py
