@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Lee RSS público de Google Noticias en GitHub Actions y envía candidatos a D1.
 No descarga artículos ni infiere declaraciones personales.
 """
@@ -25,6 +26,27 @@ SEARCHES = [
 BASE=os.environ['RADAR_URL'].rstrip('/')
 TOKEN=os.environ['AUTOMATION_TOKEN']
 CUTOFF=datetime.now(timezone.utc)-timedelta(days=365)
+# La lista de Google Noticias cambia entre solicitudes. Varias consultas complementarias
+# mejoran cobertura sin atribuir automáticamente los resultados al directivo.
+EXTRA_QUERIES={
+    'udem': [
+        '"Lilia García" "Universidad de Monterrey"',
+        '"Lily García" UDEM',
+        '"CHRISTUS MUGUERZA enseña a detectar un stroke a tiempo"',
+    ],
+    'tec': [
+        '"Guillermo Torre-Amione" TecSalud',
+        '"Guillermo Torre" "TecSalud"',
+    ],
+}
+
+def clean_title(value):
+    return value.casefold().rsplit(' - ',1)[0].strip()
+
+def unrelated_for_udem(title):
+    low=title.casefold()
+    return ('morena' in low or 'elecciones de 2027' in low) and not ('udem' in low or 'universidad de monterrey' in low)
+
 
 
 def read_rss(query):
@@ -51,7 +73,9 @@ def read_rss(query):
         parsed=urlparse(link)
         if not title or parsed.scheme!='https' or parsed.hostname!='news.google.com' or not parsed.path.startswith('/rss/articles/'):
             continue
-        key=title.casefold().split(' - ')[0].strip()
+        if 'Lilia García' in query or 'Lily García' in query or 'lilia garcia' in query:
+            if unrelated_for_udem(title):continue
+        key=clean_title(title)
         if key in seen:continue
         seen.add(key)
         items.append({'title':title[:400], 'url':link, 'source':source[:150], 'publishedAt':date.isoformat()})
@@ -107,9 +131,24 @@ def main():
         if i:time.sleep(3)
         print(f'\nLíder {leader}: buscando «{query}»',flush=True)
         try:
-            items,seen,expired=read_rss(query)
-            print(f'  RSS: {seen} entradas, {len(items)} candidatas en últimos 365 días, {expired} antiguas',flush=True)
-            result=ingest(leader,items)
+            combined=[]; urls=set(); titles=set(); feed_count=0; expired_total=0
+            for j,search_query in enumerate([query]+EXTRA_QUERIES.get(leader,[])):
+                if j:time.sleep(1.8)
+                try:
+                    batch,seen,expired=read_rss(search_query)
+                except (urllib.error.HTTPError,urllib.error.URLError,ValueError,ET.ParseError) as suberror:
+                    print(f'  Aviso consulta {j+1}: {type(suberror).__name__}: {str(suberror)[:90]}',flush=True)
+                    continue
+                feed_count+=seen;expired_total+=expired
+                added=0
+                for item in batch:
+                    key=clean_title(item['title'])
+                    if item['url'] in urls or key in titles:continue
+                    if leader=='udem' and unrelated_for_udem(item['title']):continue
+                    urls.add(item['url']);titles.add(key);combined.append(item);added+=1
+                print(f'  Consulta {j+1}: RSS={seen}, nuevos candidatos únicos={added}',flush=True)
+            print(f'  RSS: {feed_count} entradas entre consultas, {len(combined)} candidatas únicas en últimos 365 días, {expired_total} antiguas (puede haber repetidos entre búsquedas)',flush=True)
+            result=ingest(leader,combined)
             print('  Importación D1: '+json.dumps(result,ensure_ascii=False),flush=True)
             if not result.get('ok'):raise RuntimeError('El Worker rechazó la importación')
             successes+=1
@@ -120,3 +159,4 @@ def main():
     print(f'\nImportaciones completadas: {successes}/{len(SEARCHES)}',flush=True)
 
 if __name__=='__main__':main()
+
