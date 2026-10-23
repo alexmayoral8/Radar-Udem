@@ -76,6 +76,31 @@ jobs:
             "${RADAR_URL%/}/api/automation/run?finalize=1"
           echo
 
+      - name: Diagnosticar conexión con Cloudflare
+        env:
+          RADAR_URL: ${{ secrets.RADAR_URL }}
+          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+        run: |
+          echo "Comprobando endpoint de importación RSS..."
+
+          curl --silent --show-error \
+            --max-time 30 \
+            --dump-header /tmp/headers.txt \
+            --output /tmp/respuesta.txt \
+            --write-out 'HTTP: %{http_code}\n' \
+            --request POST \
+            --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+            --header "Content-Type: application/json" \
+            --data '{"leaderId":"tec","items":[]}' \
+            "${RADAR_URL%/}/api/automation/run?leaderRssImport=1"
+
+          echo "Cabeceras:"
+          grep -iE '^(HTTP/|server:|content-type:|cf-ray:)' /tmp/headers.txt || true
+
+          echo "Respuesta:"
+          head -c 800 /tmp/respuesta.txt
+          echo
+
       # Recopilación RSS desde GitHub, sin gastar consultas de GNews.io.
       # Los candidatos se transfieren por HTTPS al Worker, protegidos por AUTOMATION_TOKEN.
       - name: Importar Google Noticias RSS - 8 líderes
