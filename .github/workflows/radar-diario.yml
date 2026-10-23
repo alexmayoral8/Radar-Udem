@@ -23,7 +23,7 @@ jobs:
           test -n "$RADAR_URL"
           test -n "$AUTOMATION_TOKEN"
           # Cada invocación consulta una sola fuente, para respetar el límite de subrequests de Workers Free.
-          for source in who paho unesco amee aamc funsalud oecd bmc mayo harvard stanford duke mcmaster hopkins mit imperial tec uanl unam udg uc inova stat conversation_health conversation_education nature_news nature_research; do
+          for source in who paho unesco amee aamc funsalud oecd bmc mayo harvard stanford duke mcmaster hopkins mit imperial tec uanl unam udg uc inova stat conversation_health conversation_education nature_news nature_research npj_digital_research npj_digital_comment lancet_digital deepmind_ai mittech_ai healthcareit_ai anthropic_ai google_health_ai openai_research_ai openai_applied_ai forbes_health_ai stanford_hai_ai; do
             echo "Consultando fuente: $source"
             curl --silent --show-error --fail-with-body --retry 1 --max-time 100 \
               --request POST \
