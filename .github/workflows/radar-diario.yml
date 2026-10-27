@@ -95,4 +95,14 @@ jobs:
           test -n "$RADAR_URL"
           test -n "$AUTOMATION_TOKEN"
           python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_udem.py
+      # Agregar como un paso adicional bajo jobs.actualizar.steps.
+      # Requiere actions/checkout@v4 al inicio del workflow.
+      - name: Importar Google Noticias RSS - Competencia Tec
+        env:
+          RADAR_URL: ${{ secrets.RADAR_URL }}
+          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+        run: |
+          set -euo pipefail
+          python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_tec.py
+
 
