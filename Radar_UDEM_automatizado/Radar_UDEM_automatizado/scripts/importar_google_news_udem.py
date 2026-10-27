@@ -1,72 +1,96 @@
-#!/usr/bin/env python3
-"""Búsqueda RSS de menciones UDEM desde GitHub Actions, entrega por curl a Worker."""
-import json, os, subprocess, time, urllib.error, urllib.request
-import xml.etree.ElementTree as ET
-from datetime import datetime, timedelta, timezone
-from email.utils import parsedate_to_datetime
-from urllib.parse import urlencode, urlparse
+name: Actualizar Radar UDEM Health
 
-BASE=os.environ['RADAR_URL'].rstrip('/')
-TOKEN=os.environ['AUTOMATION_TOKEN']
-QUERIES = [
-    'UDEM',
-    '"UDEM Health"',
-    'UDEM Monterrey'
-    ]
-CUTOFF=datetime.now(timezone.utc)-timedelta(days=90)
+on:
+  schedule:
+    # 07:00 en Monterrey (UTC-6, sin horario de verano)
+    - cron: '0 13 * * 1-5'
+  workflow_dispatch:
 
-def fetch_rss(query):
-    url='https://news.google.com/rss/search?'+urlencode({'q':query,'hl':'es-419','gl':'MX','ceid':'MX:es-419'})
-    request=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0','Accept':'application/rss+xml, application/xml'})
-    with urllib.request.urlopen(request,timeout=25) as response:
-        payload=response.read(2_000_001)
-    if len(payload)>2_000_000:raise ValueError('RSS demasiado grande')
-    rows=ET.fromstring(payload).findall('.//item')
-    items=[]
-    for row in rows:
-        title=(row.findtext('title') or '').strip()
-        link=(row.findtext('link') or '').strip()
-        source=(row.findtext('source') or '').strip()
-        try:
-            date=parsedate_to_datetime(row.findtext('pubDate') or '')
-            if date.tzinfo is None:date=date.replace(tzinfo=timezone.utc)
-        except (ValueError,TypeError,IndexError):continue
-        u=urlparse(link)
-        if not title or len(title)<12 or date<CUTOFF or date>datetime.now(timezone.utc)+timedelta(days=1):continue
-        if u.scheme!='https' or u.hostname!='news.google.com' or not u.path.startswith('/rss/articles/'):continue
-        items.append({'title':title[:400],'url':link,'source':source[:150],'publishedAt':date.isoformat()})
-    return len(rows),items
+permissions:
+  contents: read
 
-def upload(items):
-    totals={'received':0,'saved':0,'existing':0,'discarded':0}
-    chunks=[items[n:n+8] for n in range(0,len(items),8)]
-    for i,batch in enumerate(chunks,1):
-        cmd=['curl','--silent','--show-error','--max-time','45','--request','POST','--header','Authorization: Bearer '+TOKEN,'--header','Content-Type: application/json','--data-binary','@-','--write-out','\n__HTTP_STATUS__:%{http_code}',BASE+'/api/automation/run?mentionsRssImport=1']
-        p=subprocess.run(cmd,input=json.dumps({'items':batch},ensure_ascii=False),text=True,capture_output=True,timeout=50)
-        if '\n__HTTP_STATUS__:' not in p.stdout:raise RuntimeError('Sin HTTP: '+p.stderr[:180])
-        body,code=p.stdout.rsplit('\n__HTTP_STATUS__:',1)
-        if p.returncode or code.strip()!='200':raise RuntimeError(f'Lote {i}: HTTP {code.strip()} {body[:250]}')
-        result=json.loads(body)
-        if not result.get('ok'):raise RuntimeError(f'Lote {i}: {str(result)[:220]}')
-        for field in totals:totals[field]+=int(result.get(field,0))
-        print(f'  Lote {i}/{len(chunks)}: nuevas={result["saved"]}, existentes={result["existing"]}, descartadas={result["discarded"]}',flush=True)
-    return totals
+concurrency:
+  group: radar-udem-automation
+  cancel-in-progress: false
 
-def main():
-    seen=set();all_items=[];working=0
-    for i,query in enumerate(QUERIES):
-        if i:time.sleep(2)
-        try:
-            count,items=fetch_rss(query);working+=1;added=0
-            for item in items:
-                if item['url'] in seen:continue
-                seen.add(item['url']);all_items.append(item);added+=1
-            print(f'Búsqueda {i+1}: {query!r} | RSS={count}, candidatos nuevos={added}',flush=True)
-        except (urllib.error.URLError,ET.ParseError,ValueError) as e:
-            print(f'AVISO búsqueda {i+1}: {type(e).__name__}: {str(e)[:150]}',flush=True)
-    if working==0:raise RuntimeError('Ninguna búsqueda RSS pudo completarse')
-    print(f'Candidatos únicos encontrados: {len(all_items)}',flush=True)
-    result=upload(all_items)
-    print('Importación Menciones UDEM:',json.dumps(result,ensure_ascii=False),flush=True)
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
 
-if __name__=='__main__':main()
+    steps:
+      - name: Descargar archivos del repositorio
+        uses: actions/checkout@v4
+
+      - name: Recolectar noticias y generar panorama de viernes
+        env:
+          RADAR_URL: ${{ secrets.RADAR_URL }}
+          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$RADAR_URL"
+          test -n "$AUTOMATION_TOKEN"
+
+          # Cada invocación consulta una sola fuente.
+          for source in who paho unesco amee aamc funsalud oecd bmc mayo harvard stanford duke mcmaster hopkins mit imperial tec uanl unam udg uc inova stat conversation_health conversation_education nature_news nature_research npj_digital_research npj_digital_comment lancet_digital deepmind_ai mittech_ai healthcareit_ai anthropic_ai google_health_ai openai_research_ai openai_applied_ai forbes_health_ai stanford_hai_ai techtarget_ai ama_ai rice_kennedy_ai stanford_raise_ai modernhealth_ai openevidence_ai mayo_digital_ai bmj_digital_ai nejm_ai; do
+            echo "Consultando fuente: $source"
+            curl --silent --show-error --fail-with-body --retry 1 --max-time 100 \
+              --request POST \
+              --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+              "${RADAR_URL%/}/api/automation/run?source=${source}"
+            echo
+
+            case "$source" in
+              nature_news|nature_research|npj_digital_research|npj_digital_comment)
+                echo "Esperando antes de consultar la siguiente fuente..."
+                sleep 3
+                ;;
+            esac
+          done
+
+          echo "Actualizando canales de video..."
+          for channel in who paho tec harvard nature ted frontiers uchicago; do
+            echo "Canal: $channel"
+            curl --silent --show-error --max-time 60 \
+              --request POST \
+              --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+              "${RADAR_URL%/}/api/automation/run?video=${channel}" || true
+            echo
+          done
+
+          echo "Buscando menciones de directivos..."
+          for leader in tec udem who paho mayo uanl up_medicine up; do
+            echo "Líder: $leader"
+            curl --silent --show-error --max-time 55 \
+              --request POST \
+              --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+              "${RADAR_URL%/}/api/automation/run?leader=${leader}" || true
+            echo
+          done
+
+          echo "Comprobando generación del panorama..."
+          curl --silent --show-error --fail-with-body --max-time 150 \
+            --request POST \
+            --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+            "${RADAR_URL%/}/api/automation/run?finalize=1"
+          echo
+
+      - name: Importar Google Noticias RSS - 8 líderes
+        env:
+          RADAR_URL: ${{ secrets.RADAR_URL }}
+          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$RADAR_URL"
+          test -n "$AUTOMATION_TOKEN"
+          python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_lideres.py
+
+      - name: Importar Google Noticias RSS - Menciones UDEM
+        env:
+          RADAR_URL: ${{ secrets.RADAR_URL }}
+          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$RADAR_URL"
+          test -n "$AUTOMATION_TOKEN"
+          python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_udem.py
