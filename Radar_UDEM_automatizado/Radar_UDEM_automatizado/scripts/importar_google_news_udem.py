@@ -9,9 +9,9 @@ from urllib.parse import urlencode, urlparse
 BASE=os.environ['RADAR_URL'].rstrip('/')
 TOKEN=os.environ['AUTOMATION_TOKEN']
 QUERIES = [
-    '"Universidad de Monterrey"',
-    'UDEM Monterrey universidad',
-    '"UDEM Health" Monterrey'
+    'UDEM',
+    '"UDEM Health"',
+    'UDEM Monterrey'
 ]
 CUTOFF=datetime.now(timezone.utc)-timedelta(days=90)
 
