@@ -22,6 +22,13 @@ SEARCHES = [
     ('uanl', 'Oscar Vidal Gutierrez UANL medicina'),
     ('up_medicine', 'Lourdes Gonzalez del Rincon Universidad Panamericana medicina'),
     ('up', 'Gregorio Obrador Vera Universidad Panamericana'),
+    ('ai_altman', '"Sam Altman" AI'),
+    ('ai_hassabis', '"Demis Hassabis" AI'),
+    ('ai_amodei', '"Dario Amodei" AI'),
+    ('ai_huang', '"Jensen Huang" AI'),
+    ('ai_nadella', '"Satya Nadella" AI'),
+    ('ai_pichai', '"Sundar Pichai" AI'),
+    ('ai_zuckerberg', '"Mark Zuckerberg" AI'),
 ]
 BASE=os.environ['RADAR_URL'].rstrip('/')
 TOKEN=os.environ['AUTOMATION_TOKEN']
@@ -159,4 +166,3 @@ def main():
     print(f'\nImportaciones completadas: {successes}/{len(SEARCHES)}',flush=True)
 
 if __name__=='__main__':main()
-
