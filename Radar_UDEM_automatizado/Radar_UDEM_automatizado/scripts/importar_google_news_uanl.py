@@ -31,10 +31,17 @@ def fetch_rss(query):
         except (ValueError,TypeError,IndexError):continue
         u=urlparse(link)
         if not title or len(title)<12 or date<CUTOFF or date>datetime.now(timezone.utc)+timedelta(days=1):continue
+        description=re.sub(r'<[^>]*>', ' ', row.findtext('description') or '')[:500]
         normalized=''.join(c for c in unicodedata.normalize('NFD',title.lower()) if unicodedata.category(c)!='Mn')
-        if not re.search(r'universidad autonoma de nuevo leon|\buanl\b',normalized):continue
+        context=''.join(c for c in unicodedata.normalize('NFD',description.lower()) if unicodedata.category(c)!='Mn')
+        named=r'universidad autonoma de nuevo leon|\buanl\b'
+        topic=r'universidad|facultad|campus|rector|escuela|hospital universitario|investigador|estudiant|alumn|academic|docent|profesor|convocatoria|beca|programa universitario|educacion superior|convenio|alianza|congreso|laboratorio|medicina|cientific|investigaci|posgrado'
+        bio=r'(?:egresad[oa]|exalumn[oa]|graduad[oa]|autor|columnista|periodista).{0,110}(?:universidad autonoma de nuevo leon|\buanl\b)|(?:universidad autonoma de nuevo leon|\buanl\b).{0,75}(?:egresad[oa]|exalumn[oa]|autor|columnista|periodista)'
+        if not re.search(named,normalized):
+            if not (re.search(named,context) and re.search(topic,normalized) and not re.search(bio,context)):continue
+        if re.search(r'\btigres\b|liga mx|liguilla|clasico regio|futbol',normalized) and not re.search(topic,normalized):continue
         if u.scheme!='https' or u.hostname!='news.google.com' or not u.path.startswith('/rss/articles/'):continue
-        items.append({'title':title[:400],'url':link,'source':source[:150],'publishedAt':date.isoformat()})
+        items.append({'title':title[:400],'url':link,'source':source[:150],'description':description,'publishedAt':date.isoformat()})
     return len(rows),items
 
 def upload(items):
