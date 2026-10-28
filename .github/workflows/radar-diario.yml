@@ -104,5 +104,15 @@ jobs:
         run: |
           set -euo pipefail
           python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_tec.py
+      - name: Importar Google Noticias RSS - Universidad Autónoma de Nuevo León
+        env:
+          RADAR_URL: ${{ secrets.RADAR_URL }}
+          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -n "$RADAR_URL"
+          test -n "$AUTOMATION_TOKEN"
+          python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_uanl.py
+
 
 
