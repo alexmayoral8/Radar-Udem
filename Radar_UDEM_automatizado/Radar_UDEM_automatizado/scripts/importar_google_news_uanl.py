@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Búsqueda RSS de menciones Tec desde GitHub Actions, entrega por curl a Worker."""
-import json, os, subprocess, time, urllib.error, urllib.request
+import json, os, subprocess, time, urllib.error, urllib.request, re, unicodedata
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
@@ -31,6 +31,8 @@ def fetch_rss(query):
         except (ValueError,TypeError,IndexError):continue
         u=urlparse(link)
         if not title or len(title)<12 or date<CUTOFF or date>datetime.now(timezone.utc)+timedelta(days=1):continue
+        normalized=''.join(c for c in unicodedata.normalize('NFD',title.lower()) if unicodedata.category(c)!='Mn')
+        if not re.search(r'universidad autonoma de nuevo leon|\buanl\b',normalized):continue
         if u.scheme!='https' or u.hostname!='news.google.com' or not u.path.startswith('/rss/articles/'):continue
         items.append({'title':title[:400],'url':link,'source':source[:150],'publishedAt':date.isoformat()})
     return len(rows),items
@@ -68,3 +70,4 @@ def main():
     print('Importación Competencia UANL:',json.dumps(result,ensure_ascii=False),flush=True)
 
 if __name__=='__main__':main()
+
