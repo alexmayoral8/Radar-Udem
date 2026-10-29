@@ -114,5 +114,12 @@ jobs:
           test -n "$AUTOMATION_TOKEN"
           python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_uanl.py
 
+      - name: Google Noticias - líderes agregados desde el radar
+        env:
+          RADAR_URL: ${{ secrets.RADAR_URL }}
+          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+        run: |
+          set -euo pipefail
+          python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_lideres_personalizados.py
 
 
