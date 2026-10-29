@@ -121,5 +121,28 @@ jobs:
         run: |
           set -euo pipefail
           python3 Radar_UDEM_automatizado/Radar_UDEM_automatizado/scripts/importar_google_news_lideres_personalizados.py
+# Agregar dentro de jobs.actualizar.steps, al final de los pasos de recopilación:
+      - name: Clasificar noticias nuevas con Gemini (lotes en D1)
+        env:
+          RADAR_URL: ${{ secrets.RADAR_URL }}
+          AUTOMATION_TOKEN: ${{ secrets.AUTOMATION_TOKEN }}
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 40); do
+            response=$(curl --silent --show-error --fail-with-body --max-time 70 \
+              --request POST \
+              --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+              "${RADAR_URL%/}/api/automation/run?classifyNewsBatch=1")
+            echo "Lote $i: $response"
+            if echo "$response" | python3 -c 'import json,sys; sys.exit(0 if json.load(sys.stdin).get("remaining",1)==0 else 1)'; then break; fi
+            sleep 2
+          done
+          # Si es viernes, recalcular el panorama con las categorías actualizadas.
+          if [ "$(TZ=America/Monterrey date +%u)" = "5" ]; then
+            curl --silent --show-error --fail-with-body --max-time 150 \
+              --request POST \
+              --header "Authorization: Bearer ${AUTOMATION_TOKEN}" \
+              "${RADAR_URL%/}/api/automation/run?finalize=1"
+          fi
 
 
