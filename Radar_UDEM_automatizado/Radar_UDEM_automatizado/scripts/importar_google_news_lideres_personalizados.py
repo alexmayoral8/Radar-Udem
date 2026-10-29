@@ -44,7 +44,7 @@ def rss_for(query):
     return items
 
 def main():
-    leaders=request_json(BASE+'/api/automation/run?leaderCustomList=1')['leaders']
+    leaders=request_json(BASE+'/api/automation/run?leaderCustomList=1','POST',{})['leaders']
     print('Perfiles personalizados activos:',len(leaders))
     for leader in leaders:
         lid=leader['id']
@@ -62,3 +62,4 @@ def main():
         time.sleep(1.5)
 
 if __name__=='__main__':main()
+
